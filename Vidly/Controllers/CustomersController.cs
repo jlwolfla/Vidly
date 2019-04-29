@@ -10,21 +10,28 @@ namespace Vidly.Controllers
     public class CustomersController : Controller
     {
 
-        List<Customer> customers = new List<Customer>
+        private VidlyDb _context;
+
+        public CustomersController()
         {
-            new Customer {Id = 1, Name = "John Wolfla"},
-            new Customer {Id = 2, Name = "Patrice Wolfla"},
-            new Customer {Id = 3, Name = "Joe Wolfla"},
-            new Customer {Id = 4, Name = "Patrice Wolfla"},
-            new Customer {Id = 5, Name = "Madison Wolfla"},
-            new Customer {Id = 6, Name = "Nick Wolfla"}
-        };
+            _context = new VidlyDb();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _context.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
 
 
         // GET: Customers
         public ActionResult Index()
         {
-
+            var customers = _context.Customers;
             return View(customers);
         }
 
@@ -32,8 +39,18 @@ namespace Vidly.Controllers
         public ActionResult Details(int? Id)
         {
 
-            var customer = (from _c in customers where _c.Id == Id select _c).FirstOrDefault();
-            return View(customer);
+            //var customer = (from _c in _context.Customers where _c.Id == Id select _c).FirstOrDefault();
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == Id);
+
+            if (customer != null)
+            {
+                return View(customer);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+
         }
 
 

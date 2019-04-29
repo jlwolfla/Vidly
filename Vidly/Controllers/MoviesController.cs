@@ -31,7 +31,16 @@ namespace Vidly.Controllers
         {
 
             var movie = (from _c in movies where _c.Id == Id select _c).FirstOrDefault();
-            return View(movie);
+
+            if (movie != null)
+            {
+                return View(movie);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+            
         }
 
 

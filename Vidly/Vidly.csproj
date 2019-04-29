@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -132,8 +138,35 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904280350064_IntialModel.cs" />
+    <Compile Include="Migrations\201904280350064_IntialModel.Designer.cs">
+      <DependentUpon>201904280350064_IntialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904290136252_CustmerUpdate.cs" />
+    <Compile Include="Migrations\201904290136252_CustmerUpdate.Designer.cs">
+      <DependentUpon>201904290136252_CustmerUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904290140429_MembershipType.cs" />
+    <Compile Include="Migrations\201904290140429_MembershipType.Designer.cs">
+      <DependentUpon>201904290140429_MembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904290158496_Name.cs" />
+    <Compile Include="Migrations\201904290158496_Name.Designer.cs">
+      <DependentUpon>201904290158496_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904290159229_Types.cs" />
+    <Compile Include="Migrations\201904290159229_Types.Designer.cs">
+      <DependentUpon>201904290159229_Types.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904290208393_Names.cs" />
+    <Compile Include="Migrations\201904290208393_Names.Designer.cs">
+      <DependentUpon>201904290208393_Names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\VidlyDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
@@ -160,7 +193,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -195,6 +230,26 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904280350064_IntialModel.resx">
+      <DependentUpon>201904280350064_IntialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904290136252_CustmerUpdate.resx">
+      <DependentUpon>201904290136252_CustmerUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904290140429_MembershipType.resx">
+      <DependentUpon>201904290140429_MembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904290158496_Name.resx">
+      <DependentUpon>201904290158496_Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904290159229_Types.resx">
+      <DependentUpon>201904290159229_Types.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904290208393_Names.resx">
+      <DependentUpon>201904290208393_Names.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
