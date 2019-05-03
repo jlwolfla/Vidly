@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
@@ -31,7 +32,8 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            var movies = (from _c in _context.Movies select _c).ToList();
+            var movies = (from _c in _context.Movies.Include(x => x.Genre) select _c).ToList();
+    
             return View(movies);
 
         }
@@ -40,49 +42,49 @@ namespace Vidly.Controllers
         public ActionResult Details(int? Id)
         {
 
-            //var movie = (from _c in movies where _c.Id == Id select _c).FirstOrDefault();
+            var movie = (from _c in _context.Movies.Include(x => x.Genre) where _c.Id == Id select _c).FirstOrDefault();
 
-            //if (movie != null)
-            //{
-            //    return View(movie);
-            //}
-            //else
-            //{
+            if (movie != null)
+            {
+                return View(movie);
+            }
+            else
+            {
                 return HttpNotFound();
-            //}
-            
+            }
+
         }
 
 
 
 
         // GET: Movies
-        public ActionResult Random()
-        {
-            var movie = new Movie()
-            {
-                Id = 1,
-                Name = "Die Hard"
-            };
+        //public ActionResult Random()
+        //{
+        //    var movie = new Movie()
+        //    {
+        //        Id = 1,
+        //        Name = "Die Hard"
+        //    };
 
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "John Wolfla"},
-                new Customer {Name = "Patrice Wolfla"},
-                new Customer {Name = "Joe Wolfla"},
-                new Customer {Name = "Patrice Wolfla"},
-                new Customer {Name = "Madison Wolfla"},
-                new Customer {Name = "Nick Wolfla"}
-            };
+        //    var customers = new List<Customer>
+        //    {
+        //        new Customer {Name = "John Wolfla"},
+        //        new Customer {Name = "Patrice Wolfla"},
+        //        new Customer {Name = "Joe Wolfla"},
+        //        new Customer {Name = "Patrice Wolfla"},
+        //        new Customer {Name = "Madison Wolfla"},
+        //        new Customer {Name = "Nick Wolfla"}
+        //    };
 
-            var ViewModel = new RandomMovieViewModel
-            {
-                Customers = customers,
-                Movie = movie
-            };
+        //    var ViewModel = new RandomMovieViewModel
+        //    {
+        //        Customers = customers,
+        //        Movie = movie
+        //    };
 
-            return View(ViewModel);
-        }
+        //    return View(ViewModel);
+        //}
 
         [Route("movies/release/{year}/{month:regex(\\d{4}):range(1, 12)}")]
         public ActionResult ByReleaseDate(int? year, int? month)

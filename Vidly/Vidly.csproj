@@ -202,6 +202,10 @@
     <Compile Include="Migrations\201905030242116_Genre6.Designer.cs">
       <DependentUpon>201905030242116_Genre6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905030245226_Genre7.cs" />
+    <Compile Include="Migrations\201905030245226_Genre7.Designer.cs">
+      <DependentUpon>201905030245226_Genre7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -320,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905030242116_Genre6.resx">
       <DependentUpon>201905030242116_Genre6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030245226_Genre7.resx">
+      <DependentUpon>201905030245226_Genre7.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

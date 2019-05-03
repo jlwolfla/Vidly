@@ -8,7 +8,29 @@
 <div>
     <h2>@Html.DisplayFor(model => model.Name)</h2>
     <hr />
+
+    <ul>
+        @if (Model.Genre != null)
+        {
+            <li class="h4">Genre: @Model.Genre.Name</li>
+        }
+
+        @if (Model.ReleaseDate != null)
+        {
+            <li class="h4">Release Date: @Convert.ToDateTime(Model.ReleaseDate).ToShortDateString()</li>
+        }
+
+        @if (Model.DateAdded != null)
+        {
+            <li class="h4">Release Date: @Convert.ToDateTime(Model.DateAdded).ToShortDateString()</li>
+        }
+
+        <li class="h4">In Stock: @Model.NumberInStock</li>
+    </ul>
+
+
 </div>
-<p>
+
+<p style="padding-top: 20px;">
     @Html.ActionLink("Back to List", "Index")
 </p>
