@@ -11,17 +11,27 @@ namespace Vidly.Controllers
     public class MoviesController : Controller
     {
 
-        List<Movie> movies = new List<Movie>
+        private VidlyDb _context;
+
+
+        public MoviesController()
         {
-            new Movie {Id = 1, Name = "Die Hard"},
-            new Movie {Id = 2, Name = "The Matrix"},
-            new Movie {Id = 3, Name = "Walking Hard"},
-            new Movie {Id = 4, Name = "Rambo"}
-        };
+            _context = new VidlyDb();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _context.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
 
         public ActionResult Index()
         {
-
+            var movies = (from _c in _context.Movies select _c).ToList();
             return View(movies);
 
         }
@@ -30,16 +40,16 @@ namespace Vidly.Controllers
         public ActionResult Details(int? Id)
         {
 
-            var movie = (from _c in movies where _c.Id == Id select _c).FirstOrDefault();
+            //var movie = (from _c in movies where _c.Id == Id select _c).FirstOrDefault();
 
-            if (movie != null)
-            {
-                return View(movie);
-            }
-            else
-            {
+            //if (movie != null)
+            //{
+            //    return View(movie);
+            //}
+            //else
+            //{
                 return HttpNotFound();
-            }
+            //}
             
         }
 

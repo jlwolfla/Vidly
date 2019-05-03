@@ -162,8 +162,49 @@
     <Compile Include="Migrations\201904290208393_Names.Designer.cs">
       <DependentUpon>201904290208393_Names.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905030127205_JoinDate.cs" />
+    <Compile Include="Migrations\201905030127205_JoinDate.Designer.cs">
+      <DependentUpon>201905030127205_JoinDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030128402_JoinDate2.cs" />
+    <Compile Include="Migrations\201905030128402_JoinDate2.Designer.cs">
+      <DependentUpon>201905030128402_JoinDate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030130326_BirthDate.cs" />
+    <Compile Include="Migrations\201905030130326_BirthDate.Designer.cs">
+      <DependentUpon>201905030130326_BirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030159477_MovieUpdate.cs" />
+    <Compile Include="Migrations\201905030159477_MovieUpdate.Designer.cs">
+      <DependentUpon>201905030159477_MovieUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030202093_Genre.cs" />
+    <Compile Include="Migrations\201905030202093_Genre.Designer.cs">
+      <DependentUpon>201905030202093_Genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030208590_Genre1.cs" />
+    <Compile Include="Migrations\201905030208590_Genre1.Designer.cs">
+      <DependentUpon>201905030208590_Genre1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030210015_Genre2.cs" />
+    <Compile Include="Migrations\201905030210015_Genre2.Designer.cs">
+      <DependentUpon>201905030210015_Genre2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030238528_Genre4.cs" />
+    <Compile Include="Migrations\201905030238528_Genre4.Designer.cs">
+      <DependentUpon>201905030238528_Genre4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030241266_Genre5.cs" />
+    <Compile Include="Migrations\201905030241266_Genre5.Designer.cs">
+      <DependentUpon>201905030241266_Genre5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030242116_Genre6.cs" />
+    <Compile Include="Migrations\201905030242116_Genre6.Designer.cs">
+      <DependentUpon>201905030242116_Genre6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\VidlyDb.cs" />
@@ -249,6 +290,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904290208393_Names.resx">
       <DependentUpon>201904290208393_Names.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030127205_JoinDate.resx">
+      <DependentUpon>201905030127205_JoinDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030128402_JoinDate2.resx">
+      <DependentUpon>201905030128402_JoinDate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030130326_BirthDate.resx">
+      <DependentUpon>201905030130326_BirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030159477_MovieUpdate.resx">
+      <DependentUpon>201905030159477_MovieUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030202093_Genre.resx">
+      <DependentUpon>201905030202093_Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030208590_Genre1.resx">
+      <DependentUpon>201905030208590_Genre1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030210015_Genre2.resx">
+      <DependentUpon>201905030210015_Genre2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030238528_Genre4.resx">
+      <DependentUpon>201905030238528_Genre4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030241266_Genre5.resx">
+      <DependentUpon>201905030241266_Genre5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030242116_Genre6.resx">
+      <DependentUpon>201905030242116_Genre6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -8,7 +8,10 @@
 <div>
     <h2>@Html.DisplayFor(model => model.Name)</h2>
     <hr />
-
+    @if(Model.BirthDate != null)
+    {
+    <p class="h4">BirthDay: @Convert.ToDateTime(Model.BirthDate).ToShortDateString()</p>
+    }
 </div>
 <p>
     @Html.ActionLink("Back to List", "Index")
