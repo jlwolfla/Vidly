@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ViewModels;
 using System.Data.Entity;
 
 namespace Vidly.Controllers
@@ -25,6 +26,27 @@ namespace Vidly.Controllers
                 _context.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+
+        public ActionResult New()
+        {
+
+            var viewModel = new NewCustomerViewModel();
+            var membershipTypes = _context.MembershipTypes.ToList();
+
+            viewModel.MembershipTypes = membershipTypes;
+
+            return View(viewModel);
+        }
+
+
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
 
